@@ -1,0 +1,89 @@
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="main"> 
+    <ion-header>
+      <ion-toolbar class="navbar">
+        <ion-title class="navbar-brand">Menú</ion-title>  
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item routerLink="/personajes">
+            <ion-icon name="person" slot="start"></ion-icon>
+            Personajes
+          </ion-item>
+          <ion-item routerLink="/controles">
+            <ion-icon name="game-controller" slot="start"></ion-icon> 
+            Controles
+          </ion-item>
+          <ion-item routerLink="/items">
+            <ion-icon name="list" slot="start"></ion-icon> 
+            Items
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+
+  <ion-footer class="footer">
+    <ion-toolbar>
+      <ion-title class="ion-text-center" size="small">
+        © 2025 La Aventura de Zoru. Todos los derechos reservados.
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>
+</ion-app>
+
+<script>
+  async function navegar(ruta) {
+    const menu = document.querySelector('ion-menu');
+    const router = document.querySelector('ion-router');
+    
+    if (router) {
+      router.push(ruta); 
+    }
+
+    if (menu) {
+      await menu.close(); 
+    }
+  }
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  
+  body {
+      font-family: 'Press Start 2P', cursive;
+      background-color: #000000;
+      color: #F0F0F0;
+      margin: 0;
+      padding: 0;
+  }
+  
+  .navbar {
+      background-color: #3A3A5A !important;
+      border-bottom: 4px solid #FFD166;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  }
+  
+  .navbar-brand {
+      color: #8FBC8F !important;
+      font-size: 1.5em;
+      text-shadow: 2px 2px 0 #B48EAD;
+  }
+  
+  .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: #3A3A5A;
+      color: #F0F0F0;
+      border-top: 4px solid #FFD166;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.5);
+  }
+</style>

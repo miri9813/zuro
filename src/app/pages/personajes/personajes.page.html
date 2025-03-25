@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar class="navbar">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/inicio"></ion-back-button>
+      </ion-buttons>
+      <ion-title class="navbar-brand">Personajes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding" style="background-color: #0e0e0e; color: #f0f0f0;">
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let personaje of personajesRecientes" size="12" size-md="6" size-lg="4">
+          <ion-card style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); background-color: #3a3a5a;">
+    
+            <ion-card-header style="text-align: center; background-color: #ffd166; border-bottom: 4px solid #b48ead;">
+              <ion-card-title style="font-size: 1.4rem; font-weight: bold; color: #3a3a5a;">
+                {{ personaje.nombre }}
+              </ion-card-title>
+            </ion-card-header>
+    
+            <ion-card-content style="color: #f0f0f0; padding: 15px; background-color: #3a3a5a; border-radius: 0 0 12px 12px;">
+              <p style="font-size: 1rem; color: #f0f0f0;">
+                {{ personaje.descripcion || 'Sin descripción disponible.' }}
+              </p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  
+  <ion-footer style="position: absolute; bottom: 0; width: 100%; background: #3a3a5a; color: #f0f0f0; border-top: 4px solid #ffd166; padding: 10px; text-align: center;">
+    <ion-toolbar>
+      <ion-title class="ion-text-center" size="small">
+        © 2025 La Aventura de Zoru. Todos los derechos reservados.
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>
+  
