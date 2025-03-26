@@ -17,9 +17,8 @@ export class PersonajesPage implements OnInit {
     this.servicioPersonajes.getDatos().subscribe(
       (resp: RespuestaBD) => {
         console.log('Respuesta de Firebase:', resp);
-        // Accedemos a los personajes a través de 'Personajes.datos'
         if (resp && resp.Personajes && resp.Personajes.datos) {
-          this.personajesRecientes = resp.Personajes.datos;  // Accedemos correctamente
+          this.personajesRecientes = resp.Personajes.datos;  
         } else {
           console.error('No se encontraron personajes');
         }

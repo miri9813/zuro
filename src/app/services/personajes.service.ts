@@ -12,7 +12,6 @@ export class PersonajesService {
 
   constructor(private http: HttpClient) {}
 
-  // Definimos la función fuera del constructor
   getDatos(): Observable<RespuestaBD> {
     return this.http.get<RespuestaBD>(this.url);
   }
