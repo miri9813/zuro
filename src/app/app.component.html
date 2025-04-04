@@ -9,6 +9,10 @@
     <ion-content class="ion-padding">
       <ion-list>
         <ion-menu-toggle>
+          <ion-item routerLink="/historia">
+            <ion-icon name="book" slot="start"></ion-icon> 
+            Historia
+          </ion-item>
           <ion-item routerLink="/personajes">
             <ion-icon name="person" slot="start"></ion-icon>
             Personajes
@@ -57,33 +61,61 @@
   
   body {
       font-family: 'Press Start 2P', cursive;
-      background-color: #000000;
-      color: #F0F0F0;
+      background-color: #1E2A47; /* Azul profundo */
+      color: #000000; /* Color negro para el texto */
       margin: 0;
       padding: 0;
   }
   
   .navbar {
-      background-color: #3A3A5A !important;
-      border-bottom: 4px solid #FFD166;
+      background-color: #3A5A7E !important; /* Azul oscuro */
+      border-bottom: 4px solid #00B0FF; /* Azul brillante */
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
   }
   
   .navbar-brand {
-      color: #8FBC8F !important;
+      color: #00B0FF !important; /* Azul brillante */
       font-size: 1.5em;
-      text-shadow: 2px 2px 0 #B48EAD;
+      text-shadow: 2px 2px 0 #1E2A47;
   }
   
   .footer {
       position: absolute;
       bottom: 0;
       width: 100%;
-      background: #3A3A5A;
-      color: #F0F0F0;
-      border-top: 4px solid #FFD166;
+      background: #3A5A7E;
+      color: #000000; /* Cambié el color a negro para el footer */
+      border-top: 4px solid #00B0FF; /* Azul brillante */
       padding: 10px;
       text-align: center;
       box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  ion-menu {
+    background-color: #2C3E50; /* Azul más oscuro para el menú */
+  }
+
+  ion-item {
+    font-size: 1.2em;
+    color: #000000; /* Texto negro para los items */
+    background-color: transparent;
+    border-bottom: 1px solid #4C6D8C; /* Azul más claro para las separaciones */
+  }
+
+  ion-item:hover {
+    background-color: #4C6D8C; /* Azul claro al pasar el ratón */
+  }
+
+  ion-icon {
+    color: #00B0FF; /* Azul brillante para los íconos */
+  }
+
+  ion-item ion-icon {
+    margin-right: 10px;
+  }
+
+  ion-title {
+    font-size: 1.4em;
+    color: #000000; /* Título en negro */
   }
 </style>

@@ -8,7 +8,7 @@ import { RespuestaBD } from '../componentes/interfaces/interfaces';
 })
 export class PersonajesService {
 
-  private url = 'https://zoru-f4458-default-rtdb.firebaseio.com/.json';
+  private url = 'https://zoru-f4458-default-rtdb.firebaseio.com/personajes/${id}.json';
 
   constructor(private http: HttpClient) {}
 
