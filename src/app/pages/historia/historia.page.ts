@@ -2,20 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Personajes, RespuestaBD } from 'src/app/componentes/interfaces/interfaces';
 import { PersonajesService } from 'src/app/services/personajes.service';
 
-interface Elemento {
-  icono: string;
-  nombre: string;
-  ruta: string;
-}
-
 @Component({
-  standalone: false,
-  selector: 'app-inicio',
-  templateUrl: './inicio.page.html',
-  styleUrls: ['./inicio.page.scss'],
+  standalone:false,
+
+  selector: 'app-historia',
+  templateUrl: './historia.page.html',
+  styleUrls: ['./historia.page.scss'],
 })
-export class InicioPage implements OnInit {
-  personajesRecientes: Personajes[] = [];
+export class HistoriaPage implements OnInit {
+ personajesRecientes: Personajes[] = [];
   
 
   constructor(private servicioPersonajes: PersonajesService) {}
@@ -24,8 +19,8 @@ export class InicioPage implements OnInit {
       this.servicioPersonajes.getConsole().subscribe(
         (resp: RespuestaBD) => {
           console.log('Respuesta de Firebase:', resp);
-          if (resp && resp.Personajes && resp.Personajes.contenido) {
-            this.personajesRecientes = resp.Personajes.contenido;  
+          if (resp && resp.Personajes && resp.Personajes.hostoria) {
+            this.personajesRecientes = resp.Personajes.hostoria;  
           } else {
             console.error('No se encontraron controles');
           }
