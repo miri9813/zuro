@@ -1,40 +1,119 @@
 <ion-header>
-    <ion-toolbar class="navbar">
-      <ion-buttons slot="start">
-        <ion-back-button defaultHref="/inicio"></ion-back-button>
-      </ion-buttons>
-      <ion-title class="navbar-brand">Controles</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content class="ion-padding" style="background-color: #0e0e0e; color: #f0f0f0;">
-    <ion-grid>
-      <ion-row>
-        <ion-col *ngFor="let personaje of personajesRecientes" size="12" size-md="6" size-lg="4">
-          <ion-card style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); background-color: #3a3a5a;">
-  
-            <ion-card-header style="text-align: center; background-color: #ffd166; border-bottom: 4px solid #b48ead;">
-              <ion-card-title style="font-size: 1.4rem; font-weight: bold; color: #3a3a5a;">
-                {{ personaje.nombre }}
-              </ion-card-title>
-            </ion-card-header>
-  
-            <ion-card-content style="color: #f0f0f0; padding: 15px; background-color: #3a3a5a; border-radius: 0 0 12px 12px;">
-              <p style="font-size: 1rem; color: #f0f0f0;">
-                {{ personaje.movimiento || 'Sin descripción disponible.' }}
-              </p>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-content>
-  
-  <ion-footer style="position: absolute; bottom: 0; width: 100%; background: #3a3a5a; color: #f0f0f0; border-top: 4px solid #ffd166; padding: 10px; text-align: center;">
-    <ion-toolbar>
-      <ion-title class="ion-text-center" size="small">
-        © 2025 La Aventura de Zoru. Todos los derechos reservados.
-      </ion-title>
-    </ion-toolbar>
-  </ion-footer>
-  
+  <ion-toolbar class="navbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button> 
+    </ion-buttons>
+    <ion-title class="navbar-brand">Controles</ion-title> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" style="background-color: #0e0e0e; color: #f0f0f0;">
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let personaje of personajesRecientes" size="12" size-md="6" size-lg="4">
+        <ion-card class="control-card">
+          <ion-card-header class="control-header">
+            <ion-card-title class="control-title">
+              {{ personaje.nombre }}
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content class="control-content">
+            <p>{{ personaje.movimiento || 'Sin descripción disponible.' }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer class="control-footer">
+  <ion-toolbar>
+    <ion-title class="ion-text-center" size="small">
+      © 2025 La Aventura de Zoru. Todos los derechos reservados.
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>  
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+  ion-content, body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #1C2A45;
+    color: #F0F0F0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar {
+    background-color: #25324B !important;
+    border-bottom: 4px solid #69A3F7;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  .navbar-brand {
+    color: #A7C8FF !important;
+    font-size: 2em;
+    text-shadow: 2px 2px 0 #4C6F92;
+  }
+
+  .control-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background-color: #25324B;
+    border: 4px solid #3D4B70;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .control-card:hover {
+    background-color: #4A5A7A;
+    transform: scale(1.05);
+  }
+
+  .control-header {
+    text-align: center;
+    background-color: #69A3F7;
+    border-bottom: 4px solid #3D4B70;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .control-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1C2A45;
+  }
+
+  .control-content {
+    color: #F0F0F0;
+    padding: 15px;
+    background-color: #25324B;
+    border-radius: 0 0 8px 8px;
+    font-size: 14px;
+  }
+
+  .game-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 4px solid #FFD166;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+  }
+
+  .game-image:hover {
+    transform: scale(1.1);
+  }
+
+  .control-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #25324B;
+    color: #F0F0F0;
+    border-top: 4px solid #69A3F7;
+    padding: 10px;
+    text-align: center;
+  }
+</style>
