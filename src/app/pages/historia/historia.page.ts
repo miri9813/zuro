@@ -10,6 +10,7 @@ import { PersonajesService } from 'src/app/services/personajes.service';
   styleUrls: ['./historia.page.scss'],
 })
 export class HistoriaPage implements OnInit {
+
  personajesRecientes: Personajes[] = [];
   
 
@@ -31,4 +32,5 @@ export class HistoriaPage implements OnInit {
       );
     }
 
+       
 }

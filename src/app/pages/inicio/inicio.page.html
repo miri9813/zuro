@@ -1,11 +1,3 @@
-<ion-menu side="start" menuId="first" contentId="main-content">
-  <ion-header>
-    <ion-toolbar class="navbar">
-      <ion-title class="navbar-brand">Menú</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-menu>
-
 <ion-header>
   <ion-toolbar class="navbar">
     <ion-buttons slot="end">
@@ -18,7 +10,8 @@
 <ion-content [fullscreen]="true" id="main-content" class="content-centered">
   <ion-grid>
     <ion-row class="ion-justify-content-center">
-      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let personaje of personajesRecientes">
+      <!-- Recorremos personajesRecientes en una sola iteración -->
+      <ion-col *ngFor="let personaje of personajesRecientes" size="12" size-md="6" size-lg="4">
         <ion-card class="control-card">
           <ion-card-header class="control-header">
             <ion-card-title class="control-title">
@@ -33,6 +26,7 @@
     </ion-row>
   </ion-grid>
 
+  <!-- Imagen del juego -->
   <ion-row class="ion-align-items-center ion-justify-content-center">
     <ion-col size="7" class="ion-text-center personajes">
       <ion-img src="assets/icon/lo.jpeg" alt="La Aventura de Zoru" class="game-image"></ion-img>
