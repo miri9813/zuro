@@ -1,44 +1,87 @@
-<ion-header>
-  <ion-toolbar class="navbar">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button> 
-    </ion-buttons>
-    <ion-title class="navbar-brand">Controles</ion-title> 
-  </ion-toolbar>
-</ion-header>
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="main-content">
+    <ion-header>
+      <ion-toolbar class="navbar">
+        <ion-title class="navbar-brand">Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  </ion-menu>
 
-<ion-content class="ion-padding" style="background-color: #0e0e0e; color: #f0f0f0;">
-  <ion-grid>
-    <ion-row>
-      <ion-col *ngFor="let personaje of personajesRecientes" size="12" size-md="6" size-lg="4">
-        <ion-card class="control-card">
-          <ion-card-header class="control-header">
-            <ion-card-title class="control-title">
-              {{ personaje.nombre }}
-            </ion-card-title>
-          </ion-card-header>
+  <ion-header>
+    <ion-toolbar class="navbar">  
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title class="navbar-brand">Controles</ion-title> 
+    </ion-toolbar>
+  </ion-header>
 
-          <ion-card-content class="control-content">
-            <p>{{ personaje.movimiento || 'Sin descripción disponible.' }}</p>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content>
+  <ion-content [fullscreen]="true" id="main-content" class="content-centered">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" class="ion-text-center">
+          <p class="game-description">
+            <strong>Controles de Zoru</strong>
+          </p>
+        </ion-col>
+      </ion-row>
 
-<ion-footer class="control-footer">
-  <ion-toolbar>
-    <ion-title class="ion-text-center" size="small">
-      © 2025 La Aventura de Zoru. Todos los derechos reservados.
-    </ion-title>
-  </ion-toolbar>
-</ion-footer>  
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="10" size-md="6" class="controls-section">
+          <div class="control-item">
+            <span class="control-icon">⬅️</span>
+            <span class="control-text">
+              Mover a la izquierda: <code>A</code>
+            </span>
+          </div>
+          <div class="control-item">
+            <span class="control-icon">➡️</span>
+            <span class="control-text">
+              Mover a la derecha: <code>D</code>
+            </span>
+          </div>
+          <div class="control-item">
+            <span class="control-icon">⏫</span>
+            <span class="control-text">
+              Saltar: <code>Espacio</code>
+            </span>
+          </div>
+          <div class="control-item">
+            <span class="control-icon">💥</span>
+            <span class="control-text">
+              Atacar: Saltar sobre los enemigos y golpear su parte superior
+            </span>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-align-items-center ion-justify-content-center">
+        <ion-col size="7" class="ion-text-center">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-app>
+
+<script>
+  async function navegar(ruta) {
+    const menu = document.querySelector('ion-menu');
+    const router = document.querySelector('ion-router');
+    
+    if (router) {
+      router.push(ruta); 
+    }
+
+    if (menu) {
+      await menu.close(); 
+    }
+  }
+</script>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-  ion-content, body {
+  body {
     font-family: 'Press Start 2P', cursive;
     background-color: #1C2A45;
     color: #F0F0F0;
@@ -58,45 +101,49 @@
     text-shadow: 2px 2px 0 #4C6F92;
   }
 
-  .control-card {
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  .game-description {
+    font-size: 20px;
+    text-align: center;
     background-color: #25324B;
     border: 4px solid #3D4B70;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-  }
-
-  .control-card:hover {
-    background-color: #4A5A7A;
-    transform: scale(1.05);
-  }
-
-  .control-header {
-    text-align: center;
-    background-color: #69A3F7;
-    border-bottom: 4px solid #3D4B70;
-    border-radius: 8px 8px 0 0;
-  }
-
-  .control-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #1C2A45;
-  }
-
-  .control-content {
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     color: #F0F0F0;
-    padding: 15px;
+  }
+
+  .controls-section {
     background-color: #25324B;
-    border-radius: 0 0 8px 8px;
-    font-size: 14px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 4px solid #3D4B70;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  .control-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  .control-icon {
+    font-size: 30px;
+    margin-right: 15px;
+  }
+
+  .control-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #69A3F7;
   }
 
   .game-image {
     width: 200px;
     height: 200px;
     object-fit: cover;
-    border: 4px solid #FFD166;
+    border: 4px solid #69A3F7;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s;
@@ -104,16 +151,5 @@
 
   .game-image:hover {
     transform: scale(1.1);
-  }
-
-  .control-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: #25324B;
-    color: #F0F0F0;
-    border-top: 4px solid #69A3F7;
-    padding: 10px;
-    text-align: center;
   }
 </style>

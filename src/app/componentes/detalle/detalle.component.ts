@@ -3,27 +3,26 @@ import { Detalle, InfGeneral, RespuestaDetalle } from '../interfaces/interfaces'
 import { PersonajesService } from 'src/app/services/personajes.service';
 
 @Component({
-  standalone:false,
+  standalone: false,
   selector: 'app-detalle',
   templateUrl: './detalle.component.html',
   styleUrls: ['./detalle.component.scss'],
 })
-export class DetalleComponent  implements OnInit {
-  //Generamos un input para cecibir el id
-@Input() id:any;
-//Declaramos los objetos que almacenarán el detalle recuperado
-detallePersonaje={} as Detalle;
-detalleGeneral={} as InfGeneral;
+export class DetalleComponent implements OnInit {
+  //Generamos un input para recibir el id
+  @Input() id: any;
+  //Declaramos los objetos que almacenarán el detalle recuperado
+  detallePersonaje = {} as Detalle;
+  detalleGeneral = {} as InfGeneral;
 
-  constructor(private detalle:PersonajesService) { }
+  constructor(private detalle: PersonajesService) { }
 
   ngOnInit() {
     this.detalle.getDetalle(this.id)
-.subscribe((respuesta: RespuestaDetalle)=>{
-console.log('Detalle Personaje', respuesta)
-this.detallePersonaje=respuesta.datos;
-this.detalleGeneral=respuesta.support;
-});
+      .subscribe((respuesta: RespuestaDetalle) => {
+        console.log('Detalle Personaje', respuesta);
+        this.detallePersonaje = respuesta.datos;
+        this.detalleGeneral = respuesta.support;
+      });
   }
-
 }
