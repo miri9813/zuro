@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <ion-menu side="start" menuId="first" contentId="main-content">
   <ion-header>
     <ion-toolbar class="navbar">
@@ -134,3 +135,83 @@
     text-align: center;
   }
 </style>
+=======
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="main-content">
+    <ion-header>
+      <ion-toolbar class="navbar">
+        <ion-title class="navbar-brand">Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item routerLink="/historia">
+            <ion-icon name="book" slot="start"></ion-icon> 
+            Historia
+          </ion-item>
+          <ion-item routerLink="/personajes">
+            <ion-icon name="person" slot="start"></ion-icon>
+            Personajes
+          </ion-item>
+          <ion-item routerLink="/controles">
+            <ion-icon name="game-controller" slot="start"></ion-icon> 
+            Controles
+          </ion-item>
+          <ion-item routerLink="/items">
+            <ion-icon name="list" slot="start"></ion-icon> 
+            Items
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-header>
+    <ion-toolbar class="navbar">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title class="navbar-brand">Historia</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true" id="main-content" class="content-centered">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" class="ion-text-center">
+          <p class="game-description">
+            <strong>La Aventura de Zoru</strong><br>
+            Zoru partió de su aldea con una sola misión: encontrar y derrotar a la amenaza que aterrorizaba a su pueblo. Los ancianos solo le dijeron que buscara "al que comanda la máquina de guerra". Este vasto campo sería solo el primero de muchos lugares donde probaría su valor.<br><br>
+            Aquí enfrentó su primera prueba real, aunque sabía que era solo un obstáculo menor comparado con lo que vendría. Cada paso lo acercaba al verdadero enemigo, aquel que se escondía tras capas de misterio y poder.
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="7" class="ion-text-center personajes">
+        <ion-img src="assets/icon/logo.png" alt="La Aventura de Zoru" class="game-image"></ion-img>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" class="ion-text-center">
+        <p class="game-description">
+          Para más información, visita nuestra página web: 
+          <a href="https://naomigm04.github.io/la-aventura-de-zoru/" target="_blank">La Aventura de Zoru</a>
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-content>
+
+  <ion-footer class="footer">
+    <ion-toolbar>
+      <ion-title class="ion-text-center" size="small">
+        © 2025 La Aventura de Zoru. Todos los derechos reservados.
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>
+</ion-app>
+>>>>>>> be085d94f53fdaa5b16e15bf25626565d446d087
