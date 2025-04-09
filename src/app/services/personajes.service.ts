@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RespuestaBD } from '../componentes/interfaces/interfaces';
+import { RespuestaBD, RespuestaDetalle } from '../componentes/interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -18,4 +18,8 @@ export class PersonajesService {
   getConsole(): Observable<RespuestaBD> {
     return this.http.get<RespuestaBD>(this.url);
   }
+  getDetalle(id: string) {
+    return this.http.get<RespuestaDetalle>(`https://zoru-f4458-default-rtdb.firebaseio.com/personajes/${id}.json`);
+  }
+  
 }

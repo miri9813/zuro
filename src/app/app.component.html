@@ -1,24 +1,28 @@
 <ion-app>
-  <ion-menu side="start" menuId="first" contentId="main"> 
+  <ion-menu side="start" menuId="first" contentId="main">
     <ion-header>
       <ion-toolbar class="navbar">
-        <ion-title class="navbar-brand">Menú</ion-title>  
+        <ion-title class="navbar-brand">Menú</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content class="ion-padding">
       <ion-list>
         <ion-menu-toggle>
+          <ion-item routerLink="/historia">
+            <ion-icon name="book" slot="start"></ion-icon> 
+            Historia
+          </ion-item>
           <ion-item routerLink="/personajes">
             <ion-icon name="person" slot="start"></ion-icon>
             Personajes
           </ion-item>
           <ion-item routerLink="/controles">
-            <ion-icon name="game-controller" slot="start"></ion-icon> 
+            <ion-icon name="game-controller" slot="start"></ion-icon>
             Controles
           </ion-item>
           <ion-item routerLink="/items">
-            <ion-icon name="list" slot="start"></ion-icon> 
+            <ion-icon name="list" slot="start"></ion-icon>
             Items
           </ion-item>
         </ion-menu-toggle>
@@ -43,11 +47,11 @@
     const router = document.querySelector('ion-router');
     
     if (router) {
-      router.push(ruta); 
+      router.push(ruta);
     }
 
     if (menu) {
-      await menu.close(); 
+      await menu.close();
     }
   }
 </script>
@@ -57,33 +61,61 @@
   
   body {
       font-family: 'Press Start 2P', cursive;
-      background-color: #000000;
+      background-color: #1E2A47;
       color: #F0F0F0;
       margin: 0;
       padding: 0;
   }
   
   .navbar {
-      background-color: #3A3A5A !important;
-      border-bottom: 4px solid #FFD166;
+      background-color: #3A5A7E !important;
+      border-bottom: 4px solid #00B0FF;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
   }
   
   .navbar-brand {
-      color: #8FBC8F !important;
+      color: #00B0FF !important;
       font-size: 1.5em;
-      text-shadow: 2px 2px 0 #B48EAD;
+      text-shadow: 2px 2px 0 #1E2A47;
   }
-  
+
   .footer {
       position: absolute;
       bottom: 0;
       width: 100%;
-      background: #3A3A5A;
+      background: #3A5A7E;
       color: #F0F0F0;
-      border-top: 4px solid #FFD166;
+      border-top: 4px solid #00B0FF;
       padding: 10px;
       text-align: center;
       box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  ion-menu {
+    background-color: #2C3E50;
+  }
+
+  ion-item {
+    font-size: 1.2em;
+    color: #000000;
+    background-color: transparent;
+    border-bottom: 1px solid #4C6D8C;
+  }
+
+  ion-item:hover {
+    background-color: #4C6D8C;
+  }
+
+  ion-icon {
+    color: #00B0FF;
+  }
+
+  ion-item ion-icon {
+    margin-right: 10px;
+  }
+
+  ion-title {
+    font-size: 1.4em;
+    color: #000000;
   }
 </style>

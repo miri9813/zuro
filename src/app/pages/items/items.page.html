@@ -1,5 +1,150 @@
-<app-header></app-header>
-
-<ion-content>
-
-</ion-content>
+<ion-menu side="start" menuId="first" contentId="main-content">
+    <ion-header>
+      <ion-toolbar class="navbar">
+        <ion-title class="navbar-brand">Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  </ion-menu>
+  
+  <ion-header>
+    <ion-toolbar class="navbar">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button> <!-- Botón de regresar -->
+      </ion-buttons>
+      <ion-title class="navbar-brand">Items Especiales</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true" id="main-content" class="content-centered">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" class="ion-text-center">
+          <p class="game-description">
+            <strong>Items Especiales</strong>
+          </p>
+        </ion-col>
+      </ion-row>
+  
+      <!-- Item Corazón de Vida -->
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="10" size-md="6" class="item-section">
+          <div class="item">
+            <ion-img src="assets/icon/corazon.jpeg" alt="Corazón de Vida" class="item-image"></ion-img>
+            <div class="item-info">
+              <h3>Corazón de Vida</h3>
+              <p>
+                Restaura 1 punto de salud al instante. Vital para sobrevivir en combates difíciles.
+              </p>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+  
+      <!-- Item Gemas Arcanas -->
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="10" size-md="6" class="item-section">
+          <div class="item">
+            <ion-img src="assets/icon/diamante.jpeg" alt="Gemas Arcanas" class="item-image"></ion-img>
+            <div class="item-info">
+              <h3>Gemas Arcanas</h3>
+              <p>
+                Colecciona gemas.
+              </p>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+  
+      <!-- Item Punto de Control -->
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="10" size-md="6" class="item-section">
+          <div class="item">
+            <ion-img src="assets/icon/cp.jpeg" alt="Punto de Control" class="item-image"></ion-img>
+            <div class="item-info">
+              <h3>Punto de Control (CP)</h3>
+              <p>
+                Guarda tu progreso. Al morir, reaparecerás en el último CP activado.
+              </p>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+  
+    </ion-grid>
+  </ion-content>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  
+    body {
+      font-family: 'Press Start 2P', cursive;
+      background-color: #1E2A47; /* Azul profundo */
+      color: #F0F0F0;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .navbar {
+      background-color: #3A5A7E !important; /* Azul oscuro */
+      border-bottom: 4px solid #00B0FF; /* Azul brillante */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    }
+  
+    .navbar-brand {
+      color: #00B0FF !important; /* Azul brillante */
+      font-size: 2em;
+      text-shadow: 2px 2px 0 #1E2A47;
+    }
+  
+    .game-description {
+      font-size: 20px;
+      text-align: center;
+      background-color: #3A5A7E;
+      border: 4px solid #4C6D8C;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+      color: #F0F0F0;
+    }
+  
+    .item-section {
+      background-color: #3A5A7E;
+      padding: 20px;
+      border-radius: 10px;
+      border: 4px solid #4C6D8C;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+  
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+  
+    .item-image {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      border: 4px solid #00B0FF; /* Bordes azules */
+    }
+  
+    .item-info {
+      font-size: 16px;
+      color: #FFD166;
+      padding: 10px;
+    }
+  
+    .item-info h3 {
+      font-size: 1.4em;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #00B0FF; /* Azul brillante para los títulos */
+    }
+  </style>
+  

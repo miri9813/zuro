@@ -8,10 +8,11 @@
 
 <ion-header>
   <ion-toolbar class="navbar">
-    <ion-buttons slot="end">
-      <ion-menu-button></ion-menu-button>
+    <ion-buttons slot="start">
+      <!-- Botón de regreso -->
+      <ion-back-button defaultHref="/" text="Back"></ion-back-button>
     </ion-buttons>
-    <ion-title class="control-title">Inicio</ion-title>
+    <ion-title class="control-title">Historia del Juego</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -26,7 +27,7 @@
             </ion-card-title>
           </ion-card-header>
           <ion-card-content class="control-content">
-            {{ personaje?.texto || 'Cargando...' }}
+            {{ personaje?.contenido || 'Cargando...' }}
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -35,7 +36,16 @@
 
   <ion-row class="ion-align-items-center ion-justify-content-center">
     <ion-col size="7" class="ion-text-center personajes">
-      <ion-img src="assets/icon/lo.jpeg" alt="La Aventura de Zoru" class="game-image"></ion-img>
+      <ion-img src="assets/icon/logo.png" alt="La Aventura de Zoru" class="game-image"></ion-img>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="12" class="ion-text-center">
+      <p class="game-description">
+        Para más información, visita nuestra página web: 
+        <a href="https://naomigm04.github.io/la-aventura-de-zoru/" target="_blank">La Aventura de Zoru</a>
+      </p>
     </ion-col>
   </ion-row>
 </ion-content>
